@@ -117,11 +117,10 @@
       background-image: linear-gradient(135deg, #f59e0b, #fbbf24);
     }
 
-    /* Solid Consistent Hero Sizing for all devices */
+    /* Moti ane bold Typography for Hero Section */
     .title-clamp {
-      font-size: clamp(3.2rem, 9vw, 7rem);
+      font-size: clamp(3.2rem, 9vw, 8rem);
       line-height: 1.05;
-      letter-spacing: -0.03em;
     }
 
     /* Pill Shape Pricing Toggle */
@@ -244,12 +243,12 @@
   <header class="fixed top-0 left-0 w-full z-50 glass-header transition-all h-[80px] flex items-center">
     <div class="container mx-auto px-5 lg:px-12 flex justify-between items-center w-full max-w-[1600px]">
 
-      <!-- Brand Logo Enlaged -->
+      <!-- Brand Logo -->
       <a href="#" class="font-display font-black text-3xl md:text-4xl tracking-tighter text-slate-900">
         Studio<span class="text-indigo-600">717.</span>
       </a>
 
-      <!-- Buttons: Exact same shape and padding. Hover effect adjusted. -->
+      <!-- Buttons -->
       <div class="flex items-center gap-3">
         <a href="https://wa.me/917434053550" target="_blank"
           class="bg-emerald-50 text-emerald-700 border border-emerald-200 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 hover:shadow-md transition-all flex items-center gap-2">
@@ -262,43 +261,44 @@
     </div>
   </header>
 
-  <!-- SECTION 1: HERO (Perfectly Centered & Scaled) -->
-  <section id="hero" class="w-full min-h-[100dvh] flex items-center justify-center pt-[80px]">
+  <!-- SECTION 1: HERO (Perfectly Centered & Scaled Up) -->
+  <section id="hero" class="min-h-[100dvh] pt-[80px] flex items-center justify-center">
     <div
       class="container mx-auto px-6 max-w-[1200px] flex flex-col items-center justify-center text-center reveal active w-full">
 
       <!-- Pill Shaped Tag -->
-      <span class="px-6 py-2.5 rounded-full bg-white border border-slate-200 text-xs uppercase tracking-widest font-extrabold text-indigo-600 shadow-sm mb-8 flex items-center gap-2">
+      <span class="px-6 py-2.5 rounded-full bg-white border border-slate-200 text-xs uppercase tracking-widest font-extrabold text-indigo-600 shadow-sm mb-6 flex items-center gap-2">
         <i class="fas fa-sparkles text-amber-400"></i> Surat's Premium Content Space
       </span>
 
-      <!-- Heading - Perfectly proportionate across all devices -->
-      <h1 class="title-clamp font-black font-display text-slate-900 mx-auto w-full mb-6">
-        Shoot Like A Pro.<br>
+      <!-- Bigger Heading for All Devices -->
+      <h1 class="title-clamp font-black font-display tracking-tighter mb-6 text-slate-900 mx-auto w-full">
+        Shoot Like A Pro. <br>
         <span class="text-gradient grad-primary">No Studio? No Problem.</span>
       </h1>
 
       <!-- Description -->
-      <p class="text-slate-600 font-medium text-lg md:text-2xl max-w-3xl mb-12 mx-auto leading-relaxed">
+      <p class="text-slate-600 font-medium text-xl md:text-3xl max-w-4xl mb-12 mx-auto leading-relaxed">
         A luxurious, fully-equipped, acoustically treated creator space available on hourly or monthly basis.
-        <strong class="text-slate-900 font-bold block mt-2">Bring your phone, we have the rest.</strong>
+        <strong class="text-slate-900 font-bold block mt-3">Bring your phone, we have the rest.</strong>
       </p>
 
       <!-- Action Button -->
-      <button onclick="scrollToBook('Pro Package (Hourly)')" class="bg-indigo-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-indigo-700 hover:scale-105 hover:shadow-xl transition-all flex items-center justify-center gap-3 mx-auto">
+      <button onclick="scrollToBook('Pro Package (Hourly)')" class="bg-indigo-600 text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-indigo-700 hover:scale-105 hover:shadow-xl transition-all flex items-center justify-center gap-3 mx-auto">
         Reserve Your Slot <i class="fas fa-arrow-right"></i>
       </button>
     </div>
   </section>
 
   <!-- NEW SECTION: HOW IT WORKS -->
-  <section id="how-it-works" class="py-20">
+  <section id="how-it-works" class="py-24">
     <div class="container mx-auto px-6 lg:px-12 max-w-[1400px]">
       <div class="text-center mb-16 reveal">
-        <h2 class="text-3xl md:text-5xl font-black font-display tracking-tighter mb-4 text-slate-900">
+        <!-- Bigger Headings applied here -->
+        <h2 class="text-5xl md:text-7xl font-black font-display tracking-tighter mb-4 text-slate-900">
           How It <span class="text-indigo-600">Works</span>
         </h2>
-        <p class="text-slate-600 text-lg font-medium">Three simple steps to create professional content.</p>
+        <p class="text-slate-600 text-lg md:text-xl font-medium">Three simple steps to create professional content.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center reveal">
@@ -307,23 +307,23 @@
             class="w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-black mb-6">
             1</div>
           <h3 class="text-2xl font-bold font-display text-slate-900 mb-3">Choose Plan</h3>
-          <p class="text-slate-600 font-medium">Select between Hourly or Monthly packages based on your content needs.
-          </p>
+          <p class="text-slate-600 font-medium text-lg">Select between Hourly or Monthly packages based on your content
+            needs.</p>
         </div>
         <div class="glass-bento p-10 flex flex-col items-center" style="transition-delay: 100ms;">
           <div
             class="w-16 h-16 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-2xl font-black mb-6">
             2</div>
           <h3 class="text-2xl font-bold font-display text-slate-900 mb-3">Book Slot</h3>
-          <p class="text-slate-600 font-medium">Fill the form, send automated WhatsApp request, and confirm your time.
-          </p>
+          <p class="text-slate-600 font-medium text-lg">Fill the form, send automated WhatsApp request, and confirm your
+            time.</p>
         </div>
         <div class="glass-bento p-10 flex flex-col items-center" style="transition-delay: 200ms;">
           <div
             class="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-2xl font-black mb-6">
             3</div>
           <h3 class="text-2xl font-bold font-display text-slate-900 mb-3">Shoot Content</h3>
-          <p class="text-slate-600 font-medium">Walk in with your smartphone. Use our lighting, mics & aesthetic
+          <p class="text-slate-600 font-medium text-lg">Walk in with your smartphone. Use our lighting, mics & aesthetic
             backgrounds.</p>
         </div>
       </div>
@@ -331,10 +331,11 @@
   </section>
 
   <!-- SECTION 2: WHO IS THIS FOR -->
-  <section id="about" class="py-20">
+  <section id="about" class="py-24">
     <div class="container mx-auto px-6 lg:px-12 max-w-[1400px]">
       <div class="text-center mb-16 reveal">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tighter mb-4 text-slate-900">
+        <!-- Bigger Headings applied here -->
+        <h2 class="text-5xl md:text-7xl font-black font-display tracking-tighter mb-4 text-slate-900">
           Built For <span class="text-gradient grad-gold">Modern Creators</span>
         </h2>
       </div>
@@ -345,42 +346,43 @@
             class="w-16 h-16 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl mb-8 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
             <i class="fas fa-video"></i></div>
           <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Influencers</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Aesthetic backgrounds and perfect lighting to shoot your
-            reels and daily content.</p>
+          <p class="text-slate-600 font-medium text-lg leading-relaxed">Aesthetic backgrounds and perfect lighting to
+            shoot your reels and daily content.</p>
         </div>
         <div class="glass-bento p-8 flex flex-col h-full reveal group cursor-default" style="transition-delay: 100ms;">
           <div
             class="w-16 h-16 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center text-2xl mb-8 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
             <i class="fas fa-microphone-alt"></i></div>
           <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Podcasters</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Silent AC, noise-free environment, and pro-level mic
-            setups available.</p>
+          <p class="text-slate-600 font-medium text-lg leading-relaxed">Silent AC, noise-free environment, and pro-level
+            mic setups available.</p>
         </div>
         <div class="glass-bento p-8 flex flex-col h-full reveal group cursor-default" style="transition-delay: 200ms;">
           <div
             class="w-16 h-16 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-8 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
             <i class="fas fa-box-open"></i></div>
           <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Product Brands</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Perfect for e-commerce sellers needing a clean, brightly
-            lit space to shoot products.</p>
+          <p class="text-slate-600 font-medium text-lg leading-relaxed">Perfect for e-commerce sellers needing a clean,
+            brightly lit space to shoot products.</p>
         </div>
         <div class="glass-bento p-8 flex flex-col h-full reveal group cursor-default" style="transition-delay: 300ms;">
           <div
             class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-8 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
             <i class="fas fa-user-tie"></i></div>
           <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Professionals</h3>
-          <p class="text-slate-600 font-medium leading-relaxed">Doctors, lawyers, and coaches looking to build personal
-            brands with ease.</p>
+          <p class="text-slate-600 font-medium text-lg leading-relaxed">Doctors, lawyers, and coaches looking to build
+            personal brands with ease.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SECTION 3: AMENITIES -->
-  <section id="amenities" class="py-20">
+  <section id="amenities" class="py-24">
     <div class="container mx-auto px-6 lg:px-12 max-w-[1200px]">
       <div class="text-center mb-16 reveal">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tighter mb-4 text-slate-900">
+        <!-- Bigger Headings applied here -->
+        <h2 class="text-5xl md:text-7xl font-black font-display tracking-tighter mb-4 text-slate-900">
           Everything You Need.<br><span class="text-gradient grad-primary">Just Press Record.</span>
         </h2>
       </div>
@@ -393,9 +395,9 @@
             <i class="fas fa-couch"></i></div>
           <div class="relative z-10">
             <span class="bg-indigo-500 text-white font-bold uppercase tracking-widest text-xs px-5 py-2 rounded-full mb-6 inline-block">The Vibe</span>
-            <h3 class="text-3xl md:text-5xl font-black font-display text-white mb-4 tracking-tight">Aesthetic & Clean
+            <h3 class="text-4xl md:text-5xl font-black font-display text-white mb-4 tracking-tight">Aesthetic & Clean
               Space</h3>
-            <p class="text-slate-300 font-medium max-w-lg text-lg leading-relaxed">Beautiful backgrounds tailored for
+            <p class="text-slate-300 font-medium max-w-lg text-xl leading-relaxed">Beautiful backgrounds tailored for
               camera presence. Minimalist decor that puts the focus entirely on YOU.</p>
           </div>
         </div>
@@ -405,15 +407,14 @@
           <div class="w-20 h-20 rounded-full bg-cyan-50 text-cyan-500 flex items-center justify-center text-4xl mb-6">
             <i class="fas fa-snowflake"></i></div>
           <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Silent AC</h4>
-          <p class="text-base font-medium text-slate-600 leading-relaxed">Cool environment with zero background hum.</p>
+          <p class="text-lg font-medium text-slate-600 leading-relaxed">Cool environment with zero background hum.</p>
         </div>
 
         <div class="glass-bento p-8 flex flex-col justify-center items-center text-center reveal">
           <div class="w-20 h-20 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center text-4xl mb-6">
             <i class="fas fa-lightbulb"></i></div>
           <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Pro Lighting</h4>
-          <p class="text-base font-medium text-slate-600 leading-relaxed">Ring lights & Softboxes for cinematic glow.
-          </p>
+          <p class="text-lg font-medium text-slate-600 leading-relaxed">Ring lights & Softboxes for cinematic glow.</p>
         </div>
 
         <div class="glass-bento p-8 flex flex-col justify-center items-center text-center reveal"
@@ -421,7 +422,7 @@
           <div class="w-20 h-20 rounded-full bg-pink-50 text-pink-500 flex items-center justify-center text-4xl mb-6">
             <i class="fas fa-microphone-alt"></i></div>
           <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Wireless Audio</h4>
-          <p class="text-base font-medium text-slate-600 leading-relaxed">High-quality collar mics for crisp voiceovers.
+          <p class="text-lg font-medium text-slate-600 leading-relaxed">High-quality collar mics for crisp voiceovers.
           </p>
         </div>
 
@@ -431,25 +432,26 @@
             class="w-20 h-20 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center text-4xl mb-6">
             <i class="fas fa-wifi"></i></div>
           <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Essentials</h4>
-          <p class="text-base font-medium text-slate-600 leading-relaxed">High-speed WiFi & RO Filtered Water included.
+          <p class="text-lg font-medium text-slate-600 leading-relaxed">High-speed WiFi & RO Filtered Water included.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: PRICING (Highly Detailed for Quick Decision) -->
-  <section id="pricing" class="py-20">
+  <!-- SECTION 4: PRICING -->
+  <section id="pricing" class="py-24">
     <div class="container mx-auto px-6 lg:px-12 max-w-[1200px]">
       <div class="text-center mb-16 reveal">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tighter mb-6 text-slate-900">
+        <!-- Bigger Headings applied here -->
+        <h2 class="text-5xl md:text-7xl font-black font-display tracking-tighter mb-6 text-slate-900">
           Transparent <span class="text-gradient grad-primary">Pricing</span>
         </h2>
 
         <!-- Pill Toggle -->
         <div class="inline-flex toggle-bg p-2 rounded-full mb-6">
-          <button id="btn-hourly" onclick="switchPricing('hourly')" class="toggle-btn active px-8 py-3.5 text-sm sm:text-base cursor-pointer">Hourly Basis</button>
-          <button id="btn-monthly" onclick="switchPricing('monthly')" class="toggle-btn px-8 py-3.5 text-sm sm:text-base cursor-pointer">Monthly (Fixed 2 Hrs)</button>
+          <button id="btn-hourly" onclick="switchPricing('hourly')" class="toggle-btn active px-8 py-4 text-sm sm:text-lg cursor-pointer">Hourly Basis</button>
+          <button id="btn-monthly" onclick="switchPricing('monthly')" class="toggle-btn px-8 py-4 text-sm sm:text-lg cursor-pointer">Monthly (Fixed 2 Hrs)</button>
         </div>
       </div>
 
@@ -457,11 +459,10 @@
         <!-- HOURLY GRID -->
         <div id="grid-hourly" class="pricing-grid active grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
 
-          <!-- Basic Hourly -->
           <div class="glass-bento p-10 flex flex-col border border-slate-200 bg-white shadow-sm">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Barebones Space</span>
+            <span class="text-sm font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Barebones Space</span>
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Basic Package</h3>
-            <div class="text-5xl lg:text-6xl font-black text-slate-900 mb-8 font-display tracking-tighter">
+            <div class="text-6xl font-black text-slate-900 mb-8 font-display tracking-tighter">
               ₹499<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span>
             </div>
 
@@ -484,15 +485,14 @@
             <button onclick="scrollToBook('Basic Package (Hourly)', 499)" class="w-full py-5 rounded-full bg-slate-100 text-slate-900 font-bold text-lg hover:bg-slate-200 transition-all">Book Basic</button>
           </div>
 
-          <!-- Pro Hourly -->
           <div
             class="glass-bento p-10 flex flex-col relative overflow-hidden border-2 border-indigo-500 bg-indigo-50/30">
             <div class="absolute top-6 right-6 bg-indigo-600 text-white text-xs font-bold px-4 py-2 rounded-full">Most
               Popular</div>
-            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-500 mb-4 inline-block">Plug & Play Setup</span>
+            <span class="text-sm font-extrabold uppercase tracking-widest text-indigo-500 mb-4 inline-block">Plug & Play Setup</span>
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Pro Package</h3>
             <div
-              class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text grad-primary mb-8 font-display tracking-tighter">
+              class="text-6xl font-black text-transparent bg-clip-text grad-primary mb-8 font-display tracking-tighter">
               ₹999<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span>
             </div>
 
@@ -511,17 +511,15 @@
             </ul>
             <button onclick="scrollToBook('Pro Package (Hourly)', 999)" class="w-full py-5 rounded-full bg-indigo-600 text-white font-bold text-lg hover:bg-indigo-700 hover:scale-[1.02] transition-all shadow-xl shadow-indigo-200">Book Pro Setup</button>
           </div>
-
         </div>
 
         <!-- MONTHLY GRID -->
         <div id="grid-monthly" class="pricing-grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
 
-          <!-- Basic Monthly -->
           <div class="glass-bento p-10 flex flex-col border border-slate-200 bg-white">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Daily Space Access</span>
+            <span class="text-sm font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Daily Space Access</span>
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Basic Monthly</h3>
-            <div class="text-5xl lg:text-6xl font-black text-slate-900 mb-4 font-display tracking-tighter">
+            <div class="text-6xl font-black text-slate-900 mb-4 font-display tracking-tighter">
               ₹10,500<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span>
             </div>
             <div class="mb-8">
@@ -535,20 +533,19 @@
               <li class="flex items-start gap-4"><i class="fas fa-check-circle text-emerald-500 mt-1"></i>
                 <span>Aesthetic Space + AC + WiFi</span></li>
               <li class="flex items-start gap-4 opacity-70 mt-4"><i class="fas fa-times-circle text-rose-500 mt-1"></i>
-                <span>Must bring your own equipment (lights, mics)</span></li>
+                <span>Must bring your own equipment</span></li>
             </ul>
             <button onclick="scrollToBook('Basic Package (Monthly)', 10500)" class="w-full py-5 rounded-full bg-slate-100 text-slate-900 font-bold text-lg hover:bg-slate-200 transition-all">Select Basic Monthly</button>
           </div>
 
-          <!-- Pro Monthly -->
           <div
             class="glass-bento p-10 flex flex-col relative overflow-hidden border-2 border-indigo-500 bg-indigo-50/30">
             <div class="absolute top-6 right-6 bg-indigo-600 text-white text-xs font-bold px-4 py-2 rounded-full">Best
               Value</div>
-            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-500 mb-4 inline-block">Agency / Heavy Creator</span>
+            <span class="text-sm font-extrabold uppercase tracking-widest text-indigo-500 mb-4 inline-block">Agency / Heavy Creator</span>
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Pro Monthly</h3>
             <div
-              class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text grad-primary mb-4 font-display tracking-tighter">
+              class="text-6xl font-black text-transparent bg-clip-text grad-primary mb-4 font-display tracking-tighter">
               ₹15,000<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span>
             </div>
             <div class="mb-8">
@@ -568,50 +565,50 @@
             </ul>
             <button onclick="scrollToBook('Pro Package (Monthly)', 15000)" class="w-full py-5 rounded-full bg-indigo-600 text-white font-bold text-lg hover:bg-indigo-700 hover:scale-[1.02] transition-all shadow-xl shadow-indigo-200">Select Pro Monthly</button>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEW SECTION: FAQ -->
-  <section id="faq" class="py-20 bg-white/50 backdrop-blur-sm">
-    <div class="container mx-auto px-6 lg:px-12 max-w-[800px] reveal">
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-24 bg-white/50 backdrop-blur-sm">
+    <div class="container mx-auto px-6 lg:px-12 max-w-[900px] reveal">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-5xl font-black font-display tracking-tighter mb-4 text-slate-900">
+        <!-- Bigger Headings applied here -->
+        <h2 class="text-5xl md:text-7xl font-black font-display tracking-tighter mb-4 text-slate-900">
           Frequently Asked <span class="text-indigo-600">Questions</span>
         </h2>
       </div>
 
       <div class="space-y-6">
-        <div class="glass-bento p-6 md:p-8">
-          <h4 class="text-xl font-bold font-display text-slate-900 mb-2">Can I bring my own camera and team?</h4>
-          <p class="text-slate-600 font-medium">Yes! You can bring your own DSLR/Camera and up to 3 team members. The
-            space is entirely yours during your booked slot.</p>
+        <div class="glass-bento p-8 md:p-10">
+          <h4 class="text-2xl font-bold font-display text-slate-900 mb-3">Can I bring my own camera and team?</h4>
+          <p class="text-slate-600 font-medium text-lg">Yes! You can bring your own DSLR/Camera and up to 3 team
+            members. The space is entirely yours during your booked slot.</p>
         </div>
-        <div class="glass-bento p-6 md:p-8">
-          <h4 class="text-xl font-bold font-display text-slate-900 mb-2">Is the studio soundproof?</h4>
-          <p class="text-slate-600 font-medium">The studio is highly acoustically treated for echo reduction and noise
-            isolation. It's perfect for podcasting and clear voiceovers.</p>
+        <div class="glass-bento p-8 md:p-10">
+          <h4 class="text-2xl font-bold font-display text-slate-900 mb-3">Is the studio soundproof?</h4>
+          <p class="text-slate-600 font-medium text-lg">The studio is highly acoustically treated for echo reduction and
+            noise isolation. It's perfect for podcasting and clear voiceovers.</p>
         </div>
-        <div class="glass-bento p-6 md:p-8">
-          <h4 class="text-xl font-bold font-display text-slate-900 mb-2">How do I pay the advance?</h4>
-          <p class="text-slate-600 font-medium">Once you submit the booking request on WhatsApp, our team will share a
-            UPI QR code/number. Your slot is confirmed upon 50% payment.</p>
+        <div class="glass-bento p-8 md:p-10">
+          <h4 class="text-2xl font-bold font-display text-slate-900 mb-3">How do I pay the advance?</h4>
+          <p class="text-slate-600 font-medium text-lg">Once you submit the booking request on WhatsApp, our team will
+            share a UPI QR code/number. Your slot is confirmed upon 50% payment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 5: UNIQUE BOOKING FORM (Professional Bill Generator) -->
-  <section id="booking" class="py-20">
+  <!-- BOOKING FORM -->
+  <section id="booking" class="py-24">
     <div class="container mx-auto px-6 lg:px-12 max-w-[900px]">
       <div class="text-center mb-16 reveal">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black font-display tracking-tighter mb-6 text-slate-900">
+        <!-- Bigger Headings applied here -->
+        <h2 class="text-5xl md:text-7xl font-black font-display tracking-tighter mb-6 text-slate-900">
           Lock Your <span class="text-gradient grad-gold">Slot</span>
         </h2>
-        <p class="text-slate-600 text-lg md:text-xl font-medium leading-relaxed">Fast & automated booking via WhatsApp.
-        </p>
+        <p class="text-slate-600 text-xl font-medium leading-relaxed">Fast & automated booking via WhatsApp.</p>
       </div>
 
       <div id="booking-card-wrapper" class="gradient-border-box reveal">
@@ -630,7 +627,6 @@
 
             <div>
               <label class="block font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider ml-2">Selected Package</label>
-              <!-- Added data-price attributes to generate exact bill -->
               <select id="b-package" required class="w-full custom-input px-6 py-4 text-indigo-900 font-bold cursor-pointer">
                 <option value="" data-price="0" disabled selected>-- Choose a package --</option>
                 <option value="Basic Package (Hourly)" data-price="499">Basic Package - ₹499 / Hour</option>
@@ -651,11 +647,11 @@
               </div>
             </div>
 
-            <button type="submit" class="w-full py-5 mt-4 rounded-full bg-slate-900 text-white font-bold text-xl hover:bg-emerald-600 transition-all duration-300 flex justify-center items-center gap-4 hover:scale-[1.02] shadow-lg">
-              <i class="fab fa-whatsapp text-2xl"></i> Send WhatsApp Booking
+            <button type="submit" class="w-full py-5 mt-4 rounded-full bg-slate-900 text-white font-bold text-2xl hover:bg-emerald-600 transition-all duration-300 flex justify-center items-center gap-4 hover:scale-[1.02] shadow-lg">
+              <i class="fab fa-whatsapp text-3xl"></i> Send WhatsApp Booking
             </button>
             <p class="text-center text-xs font-bold text-slate-500 mt-6 tracking-widest uppercase">
-              <i class="fas fa-lock mr-1"></i> 50% Advance payment required to book slot
+              <i class="fas fa-lock mr-1"></i> 50% Advance payment required to block slot
             </p>
           </form>
         </div>
@@ -672,21 +668,21 @@
           <a href="#" class="inline-block font-display font-black text-4xl tracking-tighter text-slate-900 mb-6">
             Studio<span class="text-indigo-600">717.</span>
           </a>
-          <p class="font-medium text-slate-500 leading-relaxed text-base mb-8 max-w-sm">
+          <p class="font-medium text-slate-500 leading-relaxed text-lg mb-8 max-w-sm">
             Surat's most premium creator space. A specialized division of Nexus Institute & Marketing providing
             state-of-art facilities for modern creators.
           </p>
           <div class="flex gap-4">
             <a href="https://www.instagram.com/nexusmarketing717" target="_blank"
-              class="w-12 h-12 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-pink-50 hover:text-pink-600 hover:scale-110 transition-all text-xl"><i class="fab fa-instagram"></i></a>
+              class="w-14 h-14 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-pink-50 hover:text-pink-600 hover:scale-110 transition-all text-2xl"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/917434053550" target="_blank"
-              class="w-12 h-12 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-emerald-50 hover:text-emerald-600 hover:scale-110 transition-all text-xl"><i class="fab fa-whatsapp"></i></a>
+              class="w-14 h-14 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-emerald-50 hover:text-emerald-600 hover:scale-110 transition-all text-2xl"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
 
         <div class="flex flex-col items-center md:items-start md:pl-10">
-          <h4 class="font-bold font-display tracking-tight text-slate-900 mb-6 text-xl">Quick Links</h4>
-          <ul class="space-y-4 font-medium text-slate-500 text-base">
+          <h4 class="font-bold font-display tracking-tight text-slate-900 mb-6 text-2xl">Quick Links</h4>
+          <ul class="space-y-4 font-medium text-slate-500 text-lg">
             <li><a href="#how-it-works" class="hover:text-indigo-600 transition-colors">How it works</a></li>
             <li><a href="#about" class="hover:text-indigo-600 transition-colors">Who is this for</a></li>
             <li><a href="#pricing" class="hover:text-indigo-600 transition-colors">Pricing Plans</a></li>
@@ -698,23 +694,23 @@
         </div>
 
         <div class="flex flex-col items-center md:items-start">
-          <h4 class="font-bold font-display tracking-tight text-slate-900 mb-6 text-xl">Contact & Location</h4>
+          <h4 class="font-bold font-display tracking-tight text-slate-900 mb-6 text-2xl">Contact & Location</h4>
           <div class="space-y-5 max-w-sm w-full">
             <a href="tel:+917434053550"
               class="flex items-center gap-4 p-4 rounded-full bg-slate-50 hover:bg-white border border-slate-100 group transition-all">
               <div
-                class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-indigo-600 shrink-0 group-hover:scale-110 transition-transform">
-                <i class="fas fa-phone text-sm"></i>
+                class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-indigo-600 shrink-0 group-hover:scale-110 transition-transform">
+                <i class="fas fa-phone text-lg"></i>
               </div>
-              <span class="font-bold text-slate-700 text-base">+91 74340 53550</span>
+              <span class="font-bold text-slate-700 text-lg">+91 74340 53550</span>
             </a>
             <a href="https://maps.google.com/?q=717+Millennium+Business+Hub,+Sarthana+Jakatnaka,+Surat" target="_blank"
               class="flex items-start gap-4 p-4 rounded-[30px] bg-slate-50 hover:bg-white border border-slate-100 group transition-all">
               <div
-                class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-rose-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
-                <i class="fas fa-map-marker-alt text-sm"></i>
+                class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-rose-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                <i class="fas fa-map-marker-alt text-lg"></i>
               </div>
-              <span class="font-medium text-slate-600 text-sm leading-relaxed text-left">717, Millennium Business Hub, Opp. Dipkamal Mall, Sarthana Jakatnaka, Surat</span>
+              <span class="font-medium text-slate-600 text-base leading-relaxed text-left">717, Millennium Business Hub, Opp. Dipkamal Mall, Sarthana Jakatnaka, Surat</span>
             </a>
           </div>
         </div>
@@ -723,8 +719,9 @@
 
       <div
         class="border-t border-slate-200 pt-8 text-center flex flex-col md:flex-row items-center justify-between gap-6">
-        <p class="font-medium text-slate-500 text-sm">&copy; 2026 Nexus Institute & Marketing. All Rights Reserved.</p>
-        <span class="text-xs font-extrabold tracking-widest uppercase text-slate-500 bg-slate-100 px-5 py-2.5 rounded-full border border-slate-200">Designed for Creators</span>
+        <p class="font-medium text-slate-500 text-base">&copy; 2026 Nexus Institute & Marketing. All Rights Reserved.
+        </p>
+        <span class="text-sm font-extrabold tracking-widest uppercase text-slate-500 bg-slate-100 px-5 py-2.5 rounded-full border border-slate-200">Designed for Creators</span>
       </div>
     </div>
   </footer>
@@ -758,7 +755,6 @@
         btnHourly.classList.add('active');
         btnMonthly.classList.remove('active');
         gridMonthly.classList.remove('active');
-        // No timeout needed, class toggling handles it instantly
         gridHourly.classList.add('active');
       } else {
         btnMonthly.classList.add('active');
@@ -798,7 +794,6 @@
       const pkgSelect = document.getElementById('b-package');
       const pkgName = pkgSelect.value;
       
-      // Get price from data attribute
       const selectedOption = pkgSelect.options[pkgSelect.selectedIndex];
       const pkgPrice = selectedOption.getAttribute('data-price');
       
@@ -813,7 +808,7 @@
       hours = hours ? hours : 12;
       let formattedTime = hours + ':' + timeParts[1] + ' ' + ampm;
 
-      // Determine Included Features based on package
+      // Determine Included Features
       let inclusions = "";
       if (pkgName.includes("Basic Package (Hourly)")) {
         inclusions = "✅ Aesthetic Space\n✅ Silent AC & WiFi\n❌ No Equipments";
