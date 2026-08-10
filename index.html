@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Nexus Creator Studio | Premium Workspace in Surat</title>
+
+  <!-- Premium Fonts Setup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome for crisp icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            text: '#0f172a',
+                            muted: '#64748b',
+                            primary: '#6366f1',
+                            secondary: '#ec4899',
+                        }
+                    }
+                }
+            }
+        }
+  </script>
+
+  <style>
+    /* Base Setup & Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: #0f172a;
+      overflow-x: hidden;
+      background-color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* 
+         * ULTRA-SOFT MULTICOLOR AMBIENT BACKGROUND 
+         * Reduced opacity and softer colors for better text readability
+         */
+    .ambient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.5;
+      animation: float 25s infinite alternate ease-in-out;
+      mix-blend-mode: multiply;
+    }
+
+    .orb-1 {
+      background: #e0e7ff;
+      width: 55vw;
+      height: 55vw;
+      top: -15%;
+      left: -10%;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      background: #fce7f3;
+      width: 50vw;
+      height: 50vw;
+      bottom: -10%;
+      right: -15%;
+      animation-delay: -5s;
+    }
+
+    .orb-3 {
+      background: #fef3c7;
+      width: 45vw;
+      height: 45vw;
+      top: 45%;
+      left: 35%;
+      animation-delay: -10s;
+    }
+
+    .orb-4 {
+      background: #d1fae5;
+      width: 40vw;
+      height: 40vw;
+      top: 5%;
+      right: 25%;
+      animation-delay: -15s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(10%, 15%) scale(1.15) rotate(15deg);
+      }
+    }
+
+    /* Full Screen Section Snap Control */
+    .section-fullscreen {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      padding: 120px 0;
+    }
+
+    /* 
+         * ADVANCED GLASS BENTO BOX 
+         * Added inner glow (box-shadow inset) and deep soft shadow
+         */
+    .glass-bento {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow:
+        0 30px 60px -15px rgba(0, 0, 0, 0.05),
+        inset 0 0 20px rgba(255, 255, 255, 0.8);
+      border-radius: 36px;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-bento:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow:
+        0 40px 80px -15px rgba(0, 0, 0, 0.08),
+        inset 0 0 20px rgba(255, 255, 255, 1);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Header Glass */
+    .glass-header {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    /* Typography Enhancements */
+    .text-gradient {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .grad-primary {
+      background-image: linear-gradient(135deg, #4f46e5, #ec4899);
+    }
+
+    .grad-gold {
+      background-image: linear-gradient(135deg, #f59e0b, #fbbf24);
+    }
+
+    /* Dynamic Title Sizing using Clamp for perfect responsiveness */
+    .title-clamp {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1.05;
+    }
+
+    /* Pricing Toggle */
+    .toggle-bg {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    }
+
+    .toggle-btn {
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .toggle-btn.active {
+      background: white;
+      box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.08);
+      color: #4f46e5;
+      font-weight: 800;
+    }
+
+    /* Smooth Pricing Switch CSS */
+    .pricing-grid {
+      display: none;
+      animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .pricing-grid.active {
+      display: grid;
+    }
+
+    /* Unique Form Box Gradient Border */
+    .gradient-border-box {
+      position: relative;
+      background: linear-gradient(135deg, #4f46e5, #ec4899, #f59e0b);
+      padding: 2px;
+      /* Thinner for elegance */
+      border-radius: 38px;
+      box-shadow: 0 30px 60px -20px rgba(79, 70, 229, 0.4);
+      transition: all 0.4s ease;
+    }
+
+    .gradient-border-box .inner-box {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(40px);
+      border-radius: 36px;
+      height: 100%;
+    }
+
+    /* Auto-fill Highlight Animation */
+    @keyframes highlightForm {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 30px 60px -20px rgba(79, 70, 229, 0.4);
+      }
+
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 40px 80px -15px rgba(236, 72, 153, 0.6);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 30px 60px -20px rgba(79, 70, 229, 0.4);
+      }
+    }
+
+    .form-highlight {
+      animation: highlightForm 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Input Fields Focus Effect */
+    .custom-input {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 1);
+      transition: all 0.3s ease;
+    }
+
+    .custom-input:focus {
+      background: rgba(255, 255, 255, 1);
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll Reveal Animations Class */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Light Multicolor Ambient Background -->
+  <div class="ambient-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- Clean Header -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-header transition-all h-[80px] flex items-center">
+    <div class="container mx-auto px-5 lg:px-12 flex justify-between items-center w-full max-w-[1600px]">
+      <!-- Branding -->
+      <a href="#" class="font-display font-black text-2xl tracking-tighter text-slate-900 group">
+        Nexus<span class="text-indigo-600 group-hover:text-pink-500 transition-colors duration-300">Studio.</span>
+      </a>
+
+      <!-- Buttons -->
+      <div class="flex items-center gap-3 md:gap-4">
+        <a href="https://wa.me/917434053550" target="_blank"
+          class="bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-2.5 rounded-full font-bold text-sm hover:bg-emerald-100 hover:shadow-lg hover:shadow-emerald-500/20 transition-all flex items-center gap-2">
+          <i class="fab fa-whatsapp text-lg"></i> <span class="hidden sm:inline">Support</span>
+        </a>
+        <button onclick="scrollToBook('Pro Package (Hourly)')" class="bg-slate-900 text-white px-6 sm:px-8 py-2.5 rounded-full font-bold text-sm hover:bg-indigo-600 hover:shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all">
+                    Book Space
+                </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HERO -->
+  <section id="hero" class="section-fullscreen pt-[120px]">
+    <div class="container mx-auto px-6 lg:px-12 max-w-[1400px] flex flex-col items-center text-center reveal active">
+
+      <span class="px-5 py-2 rounded-full bg-white/70 border border-white backdrop-blur-md text-xs uppercase tracking-widest font-extrabold text-indigo-600 shadow-sm mb-8 flex items-center gap-2 hover:scale-105 transition-transform">
+                <i class="fas fa-sparkles text-amber-400"></i> Surat's Premium Content Space
+            </span>
+
+      <h1 class="title-clamp font-black font-display tracking-tighter mb-8 text-slate-900">
+        Shoot Like A Pro. <br>
+        <span class="text-gradient grad-primary">No Studio? No Problem.</span>
+      </h1>
+
+      <p class="text-slate-500 font-medium text-lg md:text-2xl max-w-3xl mb-12 leading-relaxed">
+        A luxurious, fully-equipped, acoustically treated creator space available on hourly or monthly basis.
+        <strong class="text-slate-800">Bring your phone, we have the rest.</strong>
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+        <button onclick="scrollToBook('Pro Package (Hourly)')" class="bg-indigo-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-indigo-700 hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.6)] hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+                    Reserve Your Slot <i class="fas fa-arrow-right"></i>
+                </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHO IS THIS FOR -->
+  <section id="about" class="section-fullscreen">
+    <div class="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl lg:text-7xl font-black font-display tracking-tighter mb-6 text-slate-900">
+          Built For <span class="text-gradient grad-gold">Modern Creators</span>
+        </h2>
+        <p class="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+          Have the talent but lack the space? We provide the perfect aesthetic and technical environment for your brand.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Cards with cascading delay for reveal -->
+        <div class="glass-bento p-8 flex flex-col h-full reveal group cursor-default">
+          <div
+            class="w-16 h-16 rounded-3xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl mb-8 shadow-inner group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+            <i class="fas fa-video"></i></div>
+          <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Influencers</h3>
+          <p class="text-slate-500 font-medium leading-relaxed">Aesthetic backgrounds and perfect lighting to shoot your
+            reels and daily content without disturbances.</p>
+        </div>
+
+        <div class="glass-bento p-8 flex flex-col h-full reveal group cursor-default" style="transition-delay: 100ms;">
+          <div
+            class="w-16 h-16 rounded-3xl bg-pink-50 text-pink-600 flex items-center justify-center text-2xl mb-8 shadow-inner group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+            <i class="fas fa-microphone-alt"></i></div>
+          <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Podcasters</h3>
+          <p class="text-slate-500 font-medium leading-relaxed">Silent AC, noise-free environment, and pro-level mic
+            setups available. Invite your guests and record.</p>
+        </div>
+
+        <div class="glass-bento p-8 flex flex-col h-full reveal group cursor-default" style="transition-delay: 200ms;">
+          <div
+            class="w-16 h-16 rounded-3xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-8 shadow-inner group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+            <i class="fas fa-box-open"></i></div>
+          <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Product Brands</h3>
+          <p class="text-slate-500 font-medium leading-relaxed">Perfect for e-commerce sellers needing a clean, brightly
+            lit space to shoot product catalogs or unboxings.</p>
+        </div>
+
+        <div class="glass-bento p-8 flex flex-col h-full reveal group cursor-default" style="transition-delay: 300ms;">
+          <div
+            class="w-16 h-16 rounded-3xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-8 shadow-inner group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+            <i class="fas fa-user-tie"></i></div>
+          <h3 class="text-2xl font-bold mb-3 font-display tracking-tight text-slate-900">Professionals</h3>
+          <p class="text-slate-500 font-medium leading-relaxed">Doctors, lawyers, and coaches looking to build personal
+            brands. Step in, shoot your content, and step out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: REDESIGNED AMENITIES (Bento Grid) -->
+  <section id="amenities" class="section-fullscreen">
+    <div class="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl lg:text-7xl font-black font-display tracking-tighter mb-6 text-slate-900">
+          Everything You Need.<br><span class="text-gradient grad-primary">Just Press Record.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
+
+        <!-- Main Big Box -->
+        <div
+          class="md:col-span-2 glass-bento p-8 md:p-12 relative overflow-hidden flex flex-col justify-end min-h-[350px] reveal group">
+          <div
+            class="absolute -right-10 -bottom-10 text-[250px] text-indigo-500/5 rotate-[-15deg] pointer-events-none group-hover:scale-110 group-hover:rotate-[-5deg] transition-transform duration-700">
+            <i class="fas fa-couch"></i>
+          </div>
+          <div class="relative z-10">
+            <span class="bg-white/80 backdrop-blur border border-white text-indigo-600 font-bold uppercase tracking-widest text-xs px-4 py-1.5 rounded-full mb-5 inline-block shadow-sm">The Vibe</span>
+            <h3 class="text-3xl md:text-5xl font-black font-display text-slate-900 mb-4 tracking-tight">Aesthetic &
+              Clean Space</h3>
+            <p class="text-slate-500 font-medium max-w-lg text-lg leading-relaxed">Beautiful backgrounds tailored for
+              camera presence. Minimalist decor that puts the focus entirely on YOU.</p>
+          </div>
+        </div>
+
+        <!-- Small Box 1: AC -->
+        <div class="glass-bento p-8 flex flex-col justify-center items-center text-center reveal"
+          style="transition-delay: 100ms;">
+          <div
+            class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-50 to-white text-cyan-500 border border-white flex items-center justify-center text-4xl mb-6 shadow-sm">
+            <i class="fas fa-snowflake"></i></div>
+          <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Silent AC</h4>
+          <p class="text-base font-medium text-slate-500 leading-relaxed">Cool environment with zero background hum.</p>
+        </div>
+
+        <!-- Small Box 2: Lighting -->
+        <div class="glass-bento p-8 flex flex-col justify-center items-center text-center reveal">
+          <div
+            class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-50 to-white text-amber-500 border border-white flex items-center justify-center text-4xl mb-6 shadow-sm">
+            <i class="fas fa-lightbulb"></i></div>
+          <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Pro Lighting</h4>
+          <p class="text-base font-medium text-slate-500 leading-relaxed">Ring lights & Softboxes for cinematic glow.
+          </p>
+        </div>
+
+        <!-- Small Box 3: Audio -->
+        <div class="glass-bento p-8 flex flex-col justify-center items-center text-center reveal"
+          style="transition-delay: 100ms;">
+          <div
+            class="w-20 h-20 rounded-full bg-gradient-to-br from-pink-50 to-white text-pink-500 border border-white flex items-center justify-center text-4xl mb-6 shadow-sm">
+            <i class="fas fa-microphone-alt"></i></div>
+          <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Wireless Audio</h4>
+          <p class="text-base font-medium text-slate-500 leading-relaxed">High-quality collar mics for crisp voiceovers.
+          </p>
+        </div>
+
+        <!-- Small Box 4: Essentials -->
+        <div class="glass-bento p-8 flex flex-col justify-center items-center text-center reveal"
+          style="transition-delay: 200ms;">
+          <div
+            class="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-50 to-white text-emerald-500 border border-white flex items-center justify-center text-4xl mb-6 shadow-sm">
+            <i class="fas fa-wifi"></i></div>
+          <h4 class="text-2xl font-bold font-display text-slate-900 mb-2 tracking-tight">Essentials</h4>
+          <p class="text-base font-medium text-slate-500 leading-relaxed">High-speed WiFi & RO Filtered Water included.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PRICING -->
+  <section id="pricing" class="section-fullscreen">
+    <div class="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl lg:text-7xl font-black font-display tracking-tighter mb-6 text-slate-900">
+          Transparent <span class="text-gradient grad-primary">Pricing</span>
+        </h2>
+        <p class="text-slate-500 text-lg md:text-xl font-medium mb-10 max-w-2xl mx-auto leading-relaxed">Choose the plan
+          that fits your production schedule.</p>
+
+        <!-- Toggle Switch -->
+        <div class="inline-flex toggle-bg p-2 rounded-full backdrop-blur-xl mb-6">
+          <button id="btn-hourly" onclick="switchPricing('hourly')" class="toggle-btn active px-8 py-3.5 rounded-full transition-all text-sm sm:text-base cursor-pointer">Hourly Basis</button>
+          <button id="btn-monthly" onclick="switchPricing('monthly')" class="toggle-btn px-8 py-3.5 rounded-full transition-all text-sm sm:text-base cursor-pointer">Monthly (Fixed 2 Hrs/Day)</button>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto w-full reveal">
+
+        <!-- HOURLY PRICING GRID -->
+        <div id="grid-hourly" class="pricing-grid active grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div class="glass-bento p-10 flex flex-col bg-white/40">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Barebones Space</span>
+            <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Basic Package</h3>
+            <div class="text-6xl font-black text-slate-900 mb-8 font-display tracking-tighter">
+              ₹499<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span></div>
+            <ul class="space-y-5 font-medium text-slate-600 mb-10 flex-grow text-lg">
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Aesthetic
+                Background Space</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Silent AC
+                Environment</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> High-Speed WiFi &
+                Water</li>
+              <li class="flex items-center gap-4 opacity-50">
+                <i class="fas fa-times text-rose-500 bg-rose-50 p-1.5 rounded-full text-sm"></i> No Equipments Provided
+              </li>
+            </ul>
+            <button onclick="scrollToBook('Basic Package (Hourly)')" class="w-full py-5 rounded-2xl bg-white text-indigo-600 font-bold text-lg border border-indigo-100 shadow-sm hover:bg-indigo-50 hover:shadow-md transition-all">Book Basic</button>
+          </div>
+
+          <div class="glass-bento p-10 flex flex-col relative overflow-hidden ring-4 ring-indigo-500/20 bg-white/60">
+            <div
+              class="absolute top-6 right-6 bg-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+              Most Popular</div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-500 mb-4 inline-block">Plug & Play Setup</span>
+            <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Pro Package</h3>
+            <div
+              class="text-6xl font-black text-transparent bg-clip-text grad-primary mb-8 font-display tracking-tighter">
+              ₹999<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span></div>
+            <ul class="space-y-5 font-medium text-slate-600 mb-10 flex-grow text-lg">
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Everything in
+                Basic</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Professional Ring
+                Light / Softbox</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Wireless Collar
+                Mics</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Heavy-Duty Tripod
+              </li>
+            </ul>
+            <button onclick="scrollToBook('Pro Package (Hourly)')" class="w-full py-5 rounded-2xl bg-indigo-600 text-white font-bold text-lg shadow-[0_15px_30px_-10px_rgba(79,70,229,0.5)] hover:bg-indigo-700 hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.6)] hover:-translate-y-1 transition-all">Book Pro Setup</button>
+          </div>
+        </div>
+
+        <!-- MONTHLY PRICING GRID -->
+        <div id="grid-monthly" class="pricing-grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div class="glass-bento p-10 flex flex-col bg-white/40">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Daily Shooter (Space Only)</span>
+            <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Basic Monthly</h3>
+            <div class="text-6xl font-black text-slate-900 mb-4 font-display tracking-tighter">
+              ₹10,500<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span></div>
+            <div class="mb-8">
+              <span class="text-sm font-bold text-emerald-700 bg-emerald-100/60 border border-emerald-200 px-3 py-1.5 rounded-lg">Fixed 2 Hours Daily (Mon-Sat)</span>
+            </div>
+            <ul class="space-y-5 font-medium text-slate-600 mb-10 flex-grow text-lg">
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Reserved slot
+                every day</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Aesthetic space +
+                AC + WiFi</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Bring your own
+                equipments</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Huge savings vs
+                hourly rate</li>
+            </ul>
+            <button onclick="scrollToBook('Basic Package (Monthly)')" class="w-full py-5 rounded-2xl bg-white text-indigo-600 font-bold text-lg border border-indigo-100 shadow-sm hover:bg-indigo-50 hover:shadow-md transition-all">Select Basic Monthly</button>
+          </div>
+
+          <div class="glass-bento p-10 flex flex-col relative overflow-hidden ring-4 ring-indigo-500/20 bg-white/60">
+            <div
+              class="absolute top-6 right-6 bg-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+              Best Value</div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-500 mb-4 inline-block">Agency / Heavy Creator</span>
+            <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Pro Monthly</h3>
+            <div
+              class="text-6xl font-black text-transparent bg-clip-text grad-primary mb-4 font-display tracking-tighter">
+              ₹15,000<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span></div>
+            <div class="mb-8">
+              <span class="text-sm font-bold text-emerald-700 bg-emerald-100/60 border border-emerald-200 px-3 py-1.5 rounded-lg">Fixed 2 Hours Daily (Mon-Sat)</span>
+            </div>
+            <ul class="space-y-5 font-medium text-slate-600 mb-10 flex-grow text-lg">
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Reserved slot
+                every day</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Full Studio
+                Equipment Access</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> Lights, Mics,
+                Tripod included</li>
+              <li class="flex items-center gap-4">
+                <i class="fas fa-check text-emerald-500 bg-emerald-50 p-1.5 rounded-full text-sm"></i> VIP Lock-in (No
+                price hikes)</li>
+            </ul>
+            <button onclick="scrollToBook('Pro Package (Monthly)')" class="w-full py-5 rounded-2xl bg-indigo-600 text-white font-bold text-lg shadow-[0_15px_30px_-10px_rgba(79,70,229,0.5)] hover:bg-indigo-700 hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.6)] hover:-translate-y-1 transition-all">Select Pro Monthly</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: UNIQUE BOOKING FORM -->
+  <section id="booking" class="section-fullscreen">
+    <div class="container mx-auto px-6 lg:px-12 max-w-[900px]">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl lg:text-7xl font-black font-display tracking-tighter mb-6 text-slate-900">
+          Lock Your <span class="text-gradient grad-gold">Slot</span>
+        </h2>
+        <p class="text-slate-500 text-lg md:text-xl font-medium leading-relaxed">Fast & automated booking via WhatsApp.
+        </p>
+      </div>
+
+      <!-- Elevated Unique Form Design -->
+      <div id="booking-card-wrapper" class="gradient-border-box reveal">
+        <div class="inner-box p-8 md:p-14 relative overflow-hidden">
+
+          <!-- Decorative BG inside form -->
+          <div class="absolute -top-32 -right-32 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl pointer-events-none">
+          </div>
+
+          <form id="booking-form" class="space-y-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <label class="block font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider">Full Name</label>
+                <input type="text" id="b-name" required placeholder="Ex. Rahul Sharma" class="w-full custom-input rounded-2xl px-5 py-4 text-slate-800 font-medium placeholder:text-slate-400 outline-none">
+              </div>
+              <div>
+                <label class="block font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider">WhatsApp Number</label>
+                <input type="tel" id="b-phone" required placeholder="+91 00000 00000" class="w-full custom-input rounded-2xl px-5 py-4 text-slate-800 font-medium placeholder:text-slate-400 outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider">Selected Package</label>
+              <select id="b-package" required class="w-full custom-input rounded-2xl px-5 py-4 text-indigo-900 font-bold outline-none cursor-pointer border-indigo-200">
+                                <option value="" disabled selected>-- Choose a package --</option>
+                                <option value="Basic Package (Hourly)">Basic Package - ₹499 / Hour</option>
+                                <option value="Pro Package (Hourly)">Pro Package - ₹999 / Hour</option>
+                                <option value="Basic Package (Monthly)">Basic Monthly - ₹10,500 / Month</option>
+                                <option value="Pro Package (Monthly)">Pro Monthly - ₹15,000 / Month</option>
+                            </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <label class="block font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider">Date</label>
+                <input type="date" id="b-date" required class="w-full custom-input rounded-2xl px-5 py-4 text-slate-800 font-medium outline-none cursor-pointer">
+              </div>
+              <div>
+                <label class="block font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider">Time Slot</label>
+                <input type="time" id="b-time" required class="w-full custom-input rounded-2xl px-5 py-4 text-slate-800 font-medium outline-none cursor-pointer">
+              </div>
+            </div>
+
+            <button type="submit" class="w-full py-5 mt-4 rounded-2xl bg-slate-900 text-white font-bold text-xl hover:bg-indigo-600 transition-all duration-300 flex justify-center items-center gap-4 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.5)] hover:-translate-y-1">
+                            <i class="fab fa-whatsapp text-2xl text-emerald-400"></i> Send Booking Request
+                        </button>
+            <p class="text-center text-xs font-bold text-slate-500 mt-6 tracking-widest uppercase">
+              <i class="fas fa-lock mr-1"></i> 50% Advance payment required to block slot</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW COMPREHENSIVE FOOTER -->
+  <footer class="relative z-10 pt-20 pb-10 w-full bg-white/80 backdrop-blur-2xl border-t border-slate-200">
+    <div class="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center md:text-left mb-16">
+
+        <!-- Branding & About -->
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="font-display font-black text-4xl tracking-tighter text-slate-900 mb-6">
+            Nexus<span class="text-indigo-600">Studio.</span>
+          </h3>
+          <p class="font-medium text-slate-500 leading-relaxed text-base mb-8 max-w-sm">
+            Surat's most premium creator space. A specialized division of Nexus Institute & Marketing providing
+            state-of-art facilities for modern creators.
+          </p>
+          <div class="flex gap-4">
+            <a href="https://www.instagram.com/nexusmarketing717" target="_blank"
+              class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-pink-50 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-500/20 hover:-translate-y-1 transition-all text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/917434053550" target="_blank"
+              class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-emerald-50 hover:text-emerald-600 hover:shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-1 transition-all text-xl"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-col items-center md:items-start md:pl-10">
+          <h4 class="font-bold font-display tracking-tight text-slate-900 mb-6 text-xl">Quick Links</h4>
+          <ul class="space-y-4 font-medium text-slate-500 text-base">
+            <li><a href="#hero" class="hover:text-indigo-600 transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-indigo-600 transition-colors">Who is this for</a></li>
+            <li><a href="#amenities" class="hover:text-indigo-600 transition-colors">Studio Amenities</a></li>
+            <li><a href="#pricing" class="hover:text-indigo-600 transition-colors">Pricing Plans</a></li>
+            <li><a href="https://nexusinstitute.in/" target="_blank"
+                class="text-indigo-600 font-bold hover:underline underline-offset-4 mt-2 inline-block">Nexus Institute
+                Website &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Location -->
+        <div class="flex flex-col items-center md:items-start">
+          <h4 class="font-bold font-display tracking-tight text-slate-900 mb-6 text-xl">Contact & Location</h4>
+          <div class="space-y-5 max-w-sm w-full">
+            <a href="tel:+917434053550"
+              class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 transition-all border border-slate-100 group">
+              <div
+                class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-indigo-600 shrink-0 group-hover:scale-110 transition-transform">
+                <i class="fas fa-phone text-sm"></i></div>
+              <span class="font-bold text-slate-700 text-base">+91 74340 53550</span>
+            </a>
+            <a href="https://maps.google.com/?q=717+Millennium+Business+Hub,+Sarthana+Jakatnaka,+Surat" target="_blank"
+              class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 transition-all border border-slate-100 group">
+              <div
+                class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-rose-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                <i class="fas fa-map-marker-alt text-sm"></i></div>
+              <span class="font-medium text-slate-600 text-sm leading-relaxed text-left">717, Millennium Business Hub, Opp. Dipkamal Mall, Sarthana Jakatnaka, Surat</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="border-t border-slate-200 pt-8 text-center flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="font-medium text-slate-400 text-sm">&copy; 2026 Nexus Institute & Marketing. All Rights Reserved.</p>
+        <span class="text-xs font-extrabold tracking-widest uppercase text-slate-400 bg-slate-100 px-4 py-2 rounded-full border border-slate-200">Designed for Creators</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Interactions -->
+  <script>
+    // Scroll Reveal Animation Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+            const revealOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add("active");
+                        // Optional: Stop observing once revealed
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+
+        // Smooth Instant Toggle Logic
+        function switchPricing(type) {
+            const btnHourly = document.getElementById('btn-hourly');
+            const btnMonthly = document.getElementById('btn-monthly');
+            const gridHourly = document.getElementById('grid-hourly');
+            const gridMonthly = document.getElementById('grid-monthly');
+
+            if (type === 'hourly') {
+                btnHourly.classList.add('active');
+                btnMonthly.classList.remove('active');
+                
+                gridMonthly.classList.remove('active');
+                setTimeout(() => { gridHourly.classList.add('active'); }, 10);
+            } else {
+                btnMonthly.classList.add('active');
+                btnHourly.classList.remove('active');
+                
+                gridHourly.classList.remove('active');
+                setTimeout(() => { gridMonthly.classList.add('active'); }, 10);
+            }
+        }
+
+        // Auto-fill and Scroll to Booking Logic
+        function scrollToBook(planName) {
+            const bookingSection = document.getElementById('booking');
+            const packageSelect = document.getElementById('b-package');
+            const bookingCard = document.getElementById('booking-card-wrapper');
+            
+            // Set value
+            packageSelect.value = planName;
+            
+            // Scroll
+            window.scrollTo({
+                top: bookingSection.offsetTop - 80, 
+                behavior: 'smooth'
+            });
+
+            // Trigger animation highlight
+            bookingCard.classList.remove('form-highlight');
+            void bookingCard.offsetWidth; 
+            bookingCard.classList.add('form-highlight');
+            
+            // Add focus effect to select input
+            packageSelect.focus();
+            setTimeout(() => packageSelect.blur(), 1500);
+        }
+
+        // WhatsApp Form Submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('b-name').value;
+            const phone = document.getElementById('b-phone').value;
+            const pkg = document.getElementById('b-package').value;
+            const date = document.getElementById('b-date').value;
+            let time = document.getElementById('b-time').value;
+
+            // Format time to 12hr AM/PM
+            let timeParts = time.split(':');
+            let hours = parseInt(timeParts[0]);
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            let formattedTime = hours + ':' + timeParts[1] + ' ' + ampm;
+
+            const message = `✨ *New Studio Booking Request* ✨\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🎯 *Package:* ${pkg}\n📅 *Date:* ${date}\n⌚ *Time:* ${formattedTime}\n\nPlease confirm availability and payment details.`;
+            
+            const whatsappUrl = `https://wa.me/917434053550?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+  </script>
+</body>
+</html>
