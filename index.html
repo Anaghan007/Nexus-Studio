@@ -451,7 +451,7 @@
         <!-- Pill Toggle -->
         <div class="inline-flex toggle-bg p-2 rounded-full mb-6">
           <button id="btn-hourly" onclick="switchPricing('hourly')" class="toggle-btn active px-8 py-4 text-sm sm:text-lg cursor-pointer">Hourly Basis</button>
-          <button id="btn-monthly" onclick="switchPricing('monthly')" class="toggle-btn px-8 py-4 text-sm sm:text-lg cursor-pointer">Monthly (Fixed 2 Hrs)</button>
+          <button id="btn-monthly" onclick="switchPricing('monthly')" class="toggle-btn px-8 py-4 text-sm sm:text-lg cursor-pointer">Monthly </button>
         </div>
       </div>
 
@@ -463,7 +463,7 @@
             <span class="text-sm font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Barebones Space</span>
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Basic Package</h3>
             <div class="text-6xl font-black text-slate-900 mb-8 font-display tracking-tighter">
-              ₹499<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span>
+              ₹199<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span>
             </div>
 
             <div class="font-bold text-slate-800 mb-4 uppercase text-sm tracking-wider">What's Included:</div>
@@ -493,7 +493,7 @@
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Pro Package</h3>
             <div
               class="text-6xl font-black text-transparent bg-clip-text grad-primary mb-8 font-display tracking-tighter">
-              ₹999<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span>
+              ₹299<span class="text-xl text-slate-400 font-bold tracking-normal">/hour</span>
             </div>
 
             <div class="font-bold text-indigo-900 mb-4 uppercase text-sm tracking-wider">Everything you get:</div>
@@ -520,10 +520,10 @@
             <span class="text-sm font-extrabold uppercase tracking-widest text-slate-400 mb-4 inline-block">Daily Space Access</span>
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Basic Monthly</h3>
             <div class="text-6xl font-black text-slate-900 mb-4 font-display tracking-tighter">
-              ₹10,500<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span>
+              ₹3,499<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span>
             </div>
             <div class="mb-8">
-              <span class="text-sm font-bold text-emerald-700 bg-emerald-100 px-4 py-2 rounded-full">Fixed 2 Hours Daily (Mon-Sat)</span>
+              <span class="text-sm font-bold text-emerald-700 bg-emerald-100 px-4 py-2 rounded-full">~₹116/hr</span>
             </div>
 
             <div class="font-bold text-slate-800 mb-4 uppercase text-sm tracking-wider">What's Included:</div>
@@ -546,10 +546,10 @@
             <h3 class="text-4xl font-bold font-display tracking-tight text-slate-900 mb-2">Pro Monthly</h3>
             <div
               class="text-6xl font-black text-transparent bg-clip-text grad-primary mb-4 font-display tracking-tighter">
-              ₹15,000<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span>
+              ₹4,999<span class="text-xl text-slate-400 font-bold tracking-normal">/mo</span>
             </div>
             <div class="mb-8">
-              <span class="text-sm font-bold text-emerald-700 bg-emerald-100 px-4 py-2 rounded-full">Fixed 2 Hours Daily (Mon-Sat)</span>
+              <span class="text-sm font-bold text-emerald-700 bg-emerald-100 px-4 py-2 rounded-full">~₹166/hr</span>
             </div>
 
             <div class="font-bold text-indigo-900 mb-4 uppercase text-sm tracking-wider">Everything you get:</div>
@@ -594,7 +594,7 @@
         <div class="glass-bento p-8 md:p-10">
           <h4 class="text-2xl font-bold font-display text-slate-900 mb-3">How do I pay the advance?</h4>
           <p class="text-slate-600 font-medium text-lg">Once you submit the booking request on WhatsApp, our team will
-            share a UPI QR code/number. Your slot is confirmed upon 50% payment.</p>
+            share a UPI QR code/number.</p>
         </div>
       </div>
     </div>
@@ -629,10 +629,10 @@
               <label class="block font-bold text-slate-800 text-sm mb-3 uppercase tracking-wider ml-2">Selected Package</label>
               <select id="b-package" required class="w-full custom-input px-6 py-4 text-indigo-900 font-bold cursor-pointer">
                 <option value="" data-price="0" disabled selected>-- Choose a package --</option>
-                <option value="Basic Package (Hourly)" data-price="499">Basic Package - ₹499 / Hour</option>
-                <option value="Pro Package (Hourly)" data-price="999">Pro Package - ₹999 / Hour</option>
-                <option value="Basic Package (Monthly)" data-price="10500">Basic Monthly - ₹10,500 / Month</option>
-                <option value="Pro Package (Monthly)" data-price="15000">Pro Monthly - ₹15,000 / Month</option>
+                <option value="Basic Package (Hourly)" data-price="499">Basic Package - ₹199 / Hour</option>
+                <option value="Pro Package (Hourly)" data-price="999">Pro Package - ₹299 / Hour</option>
+                <option value="Basic Package (Monthly)" data-price="10500">Basic Monthly - ₹3,499 / Month</option>
+                <option value="Pro Package (Monthly)" data-price="15000">Pro Monthly - ₹4,999 / Month</option>
               </select>
             </div>
 
@@ -650,9 +650,6 @@
             <button type="submit" class="w-full py-5 mt-4 rounded-full bg-slate-900 text-white font-bold text-2xl hover:bg-emerald-600 transition-all duration-300 flex justify-center items-center gap-4 hover:scale-[1.02] shadow-lg">
               <i class="fab fa-whatsapp text-3xl"></i> Send WhatsApp Booking
             </button>
-            <p class="text-center text-xs font-bold text-slate-500 mt-6 tracking-widest uppercase">
-              <i class="fas fa-lock mr-1"></i> 50% Advance payment required to block slot
-            </p>
           </form>
         </div>
       </div>
